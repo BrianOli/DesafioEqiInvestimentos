@@ -1,0 +1,190 @@
+/* #region CONFIGS */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif, 700;
+}
+
+.bgPrimaryColor{
+    background-color: rgb(255,255,255);
+}
+.bgSecondaryColor{
+    background-color: rgb(255, 132, 0);
+}
+.bgThirdColor{
+    background-color: rgb(128, 128, 128);
+}
+.lgBoldFont{
+   font-size: 2.5em ;
+   font-weight: bold; 
+}
+.mdBoldFont{
+    font-size: 2em;
+    font-weight: bold;
+}
+.smFont{
+    font-size: 1em;
+    font-weight: bold;
+}
+.primaryColor{
+    color: #000;
+}
+.secondaryColor{
+    color: rgb(95, 95, 95);
+}
+.thirdColor{
+    color: rgb(0, 180, 0)
+}
+
+
+
+/* #endregion */
+
+.header{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    margin-bottom: .25em;
+}
+
+.subTitles{
+    display: flex;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.inputTitle{
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: .3em;   
+}
+.inputTitle i:hover {
+    cursor: pointer;
+}
+
+.rendType, .indexType{
+    margin: 0;
+    padding: 0;
+}
+.rendType div, .indexType div{
+    border: 1px solid rgb(95, 95, 95);
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
+}
+.rendType div:hover, .indexType div:hover{
+    cursor: pointer;
+    background-color: rgb(255, 132, 0);
+    transition: background-color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+}
+#btnBrut{
+    border-radius: .5em 0 0 .5em;
+}
+#btnLiqu{
+    border-radius: 0 .5em .5em 0;
+}
+#btnPre{
+    border-radius: .5em 0 0 .5em;
+}
+#btnFix{
+    border-radius: 0 .5em .5em 0;
+}
+
+input, input:focus{
+    outline: 0px;
+    width: 100%;
+    height: auto;
+    border: 0px;
+    border-bottom: 1px solid #858585;
+    font-size: 1em;
+    color: rgb(255, 132, 0);
+    -webkit-appearance: none;
+}
+.errorMessage{
+    color: red;
+    font-size: .6em;
+    font-weight: bold;
+    visibility: visible;
+}
+
+.rightColumn, .leftColumn{
+    margin-bottom: 1em;
+}
+
+.btnClearSubmit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    padding: 0 0;
+}
+.btnClear, .btnSubmit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5em;
+    font-size: 1.25em;
+    height: 2.25em;
+}
+.btnClear{
+    border: 2px solid rgb(128, 128, 128);
+}
+.btnClear:hover{
+    cursor: pointer;
+    background-color: rgb(128, 128, 128);
+    color: #fff;
+    border: 0;
+    transition: background-color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+    transition: border .15s ease-in-out;
+}
+.btnSubmit:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid rgb(128, 128, 128);
+    transition: background-color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+    transition: border .15s ease-in-out;
+}
+
+.cardArea{
+    display: flex;
+    justify-content: space-evenly;
+}
+.resultCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    margin-bottom: 1em;
+}
+.cards{
+    padding-top: .5em;
+    background-color: #fff;
+    height: 100%;
+    width: 90%;
+    border: 1px solid #000;
+    border-radius: .2em;
+    box-shadow: .2em .2em rgba(0, 0, 0, .2);
+    overflow-wrap: break-word;
+    margin: .5em;
+}
+.cardTitle, .cartText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartText{
+    padding: 0 1em;
+    align-items: center;
+    word-break: break-all;
+    height: 50%;
+}
+
+#showResults{
+    visibility: hidden;
+}
