@@ -141,7 +141,7 @@
                 <div class="mdBoldFont primaryColor subTitles">
                     Resultado da Simulação
                 </div>
-                <div id="showResults" class="col-12">
+                <div id="showResults" style="visibility: visible; background-color: blue; display:inline-block;" class="col-12">
                     <section id="cardArea" class="row cardArea">
                         
                         <div class="col-sm-12 col-md-6 col-lg-4 resultCard">
@@ -214,7 +214,10 @@
 
                     </section>
 
-                    <section style="background-color: red" id="graphs" class="col-md-12">
+                    <section style="background-color: red; display:flex; justify-content: flex-start; align-items: flex-end; height: 15em" id="graphs">
+                        <div style="height: 15%; width: 5em; background-color: green; ">s</div>
+                        
+
                     </section>
                 </div>
             </section>
@@ -224,6 +227,6 @@
     </div>
     <script src="./script/valuesApi.js"></script>
     <script src="./script/script.js"></script>
-    <script src="./script/cardsValue.js"></script>
+    <!-- <script src="./script/cardsValue.js"></script> -->
 </body>
 </html>

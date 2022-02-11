@@ -180,7 +180,6 @@ cardsValue = () => {
     }
 }
 
-
 function rendimento() {
     let colorBrut = btnBrut.style.backgroundColor;
     let colorLiqu = btnLiqu.style.backgroundColor;
