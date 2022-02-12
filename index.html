@@ -32,9 +32,9 @@
 </head>
 <body>
 
-    <div class="col-12 container-fluid mainContainer">
+    <div class="col-12 container">
         
-        <header class="container-fluid header bgPrimaryColor lgBoldFont primaryColor">
+        <header class="container-fluid header lgBoldFont primaryColor">
             Simulador de Investimentos
         </header>
 
@@ -141,7 +141,7 @@
                 <div class="mdBoldFont primaryColor subTitles">
                     Resultado da Simulação
                 </div>
-                <div id="showResults" style="visibility: visible; background-color: blue; display:inline-block;" class="col-12">
+                <div id="showResults" class="col-12">
                     <section id="cardArea" class="row cardArea">
                         
                         <div class="col-sm-12 col-md-6 col-lg-4 resultCard">
@@ -214,16 +214,49 @@
 
                     </section>
 
-                    <section style="background-color: red; display:flex; justify-content: flex-start; align-items: flex-end; height: 15em" id="graphs">
-                        <div style="height: 15%; width: 5em; background-color: green; ">s</div>
+                    <section class="graphArea row" id="graphArea">
                         
+                        <div class="col-1 graphYindex">
+                            <div class="rotate90 smFont">Valor (R$)</div>
+                        </div>
 
+                        <div class="col-10 graphBlock">
+                            <div class="graphTitle smFont col-12">Projeção de Valores</div>
+                            <div class="graph col-12 row">
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                                <div class="col-1 graphBlocks">⠀</div>
+                            </div>
+                            
+                            <div class="col-12 graphFooter">
+                                <div class="graphXindex col-12">
+                                    Tempo (meses)
+                                </div>
+                                <div class="col-12 row infoFooter">
+                                    <div class="col-3 row" style="justify-content:center; align-items: center;">
+                                        <div class="graphFooterInfo col-1 bgSecondaryColor">⠀</div>Com Aporte
+                                    </div>
+                                    <div class="col-3 row" style="justify-content:center; align-items: center;">
+                                        <div class="graphFooterInfo col-1 bgPrimaryColor">⠀</div>Sem Aporte
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                        
                     </section>
                 </div>
             </section>
-
+            
         </div>
-
     </div>
     <script src="./script/valuesApi.js"></script>
     <script src="./script/script.js"></script>

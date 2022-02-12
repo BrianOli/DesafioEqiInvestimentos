@@ -6,7 +6,7 @@
 }
 
 .bgPrimaryColor{
-    background-color: rgb(255,255,255);
+    background-color: rgb(0,0,0);
 }
 .bgSecondaryColor{
     background-color: rgb(255, 132, 0);
@@ -186,5 +186,73 @@ input, input:focus{
 }
 
 #showResults{
-    visibility: hidden;
+    visibility: visible !important;
+    background-color: blue; 
+    display:inline-block;
+    margin-bottom: 2em;
+}
+
+.graphArea{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    height: 15em;
+    padding: 0;
+}
+.graphYindex{
+    height: 15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.rotate90{
+    
+    transform: rotate(-90deg);
+
+}
+.graphTitle{
+    height: 15%;
+}
+.graphBlock{
+    background-color: purple;
+    z-index: 200;
+}
+.graph{
+    height: 65%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: aqua;
+}
+.graphBlocks{
+    height: 1em; 
+    background-color: green;
+    margin: 0 .1em;
+}
+.graphFooter{
+    height: 20%;
+    background-color: aqua;
+}
+.graphXindex{
+    background-color: yellow;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoFooter{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.graphFooterInfo{
+    display: flex;
+    justify-content: center;
+    margin: 0 .5em;
+    padding: 0;
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
 }
