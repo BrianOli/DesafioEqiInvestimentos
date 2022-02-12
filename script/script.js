@@ -170,8 +170,8 @@ verifyData = () => {
         getApiRend(rendimento()),
         getApiIndex(indexacao())
     );
-
     cardsValue();
+    graphBars();
 }
 
 cardsValue = () => {
@@ -180,7 +180,7 @@ cardsValue = () => {
     }
 }
 
-function rendimento() {
+rendimento = () => {
     let colorBrut = btnBrut.style.backgroundColor;
     let colorLiqu = btnLiqu.style.backgroundColor;
     let valBrut = false
@@ -200,7 +200,7 @@ function rendimento() {
     }
 }
 
-function indexacao() {
+indexacao = () => {
     let colorPre = btnPre.style.backgroundColor;
     let colorPos = btnPos.style.backgroundColor;
     let colorFix = btnFix.style.backgroundColor;
@@ -229,6 +229,33 @@ clearData = () => {
     document.getElementById("form1").reset();
     document.getElementById('showResults').style.visibility = 'hidden';
     fixValues();
+}
+
+graphBars = () => {
+    const contribuitionBar = document.getElementById('blocksCont')
+    const noContribuitionBar = document.getElementById('blocksNoCont')
+    const numbersGraph = document.getElementById('numbersGraph')
+    let heightBar = 9;
+    let number = 0
+
+    let barsCont = document.createElement('div');
+    barsCont.setAttribute('class', 'col-1 graphBlocks bgSecondaryColor');
+    barsCont.setAttribute('height', `${heightBar}%`);
+
+    let barsNoCont = document.createElement('div');
+    barsNoCont.setAttribute('class', 'col-1 graphBlocks bgPrimaryColor');
+    barsNoCont.setAttribute('height', `${heightBar}%`);
+
+    let numGraph = document.createElement('div');
+    numGraph.setAttribute('class', 'col-1 graphNumbers');
+    numGraph.innerText = `${number}`;
+    
+    console.log(getValuesApi(getApiRend(rendimento()), getApiIndex(indexacao()))[8]);
+        
+    contribuitionBar.appendChild(barsCont);
+    noContribuitionBar.appendChild(barsNoCont);
+    numbersGraph.appendChild(numGraph);
+    
 }
 
 

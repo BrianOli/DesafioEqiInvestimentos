@@ -221,29 +221,32 @@
                         </div>
 
                         <div class="col-10 graphBlock">
-                            <div class="graphTitle smFont col-12">Projeção de Valores</div>
-                            <div class="graph col-12 row">
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
-                                <div class="col-1 graphBlocks">⠀</div>
+                            <div class="graphTitle smFont col-12">
+                                Projeção de Valores
                             </div>
-                            
+
+                            <div class="col-12 smFont graph" style="background-color: rgba(95,95,95,.2); box-shadow: .2em .2em rgba(0, 0, 0, .3);">
+                                <div id="blocksCont" class="blocksCont col-1">
+                                </div>
+                                <div id="blocksNoCont" class="blocksNoCont col-1"> 
+
+                                </div>
+                                <div id="numbersGraph" class="numbers col-1">
+
+                                </div>
+                            </div>
+
                             <div class="col-12 graphFooter">
                                 <div class="graphXindex col-12">
                                     Tempo (meses)
                                 </div>
                                 <div class="col-12 row infoFooter">
-                                    <div class="col-3 row" style="justify-content:center; align-items: center;">
+
+                                    <div class="col-6 row" style="justify-content:center; align-items: center;">
                                         <div class="graphFooterInfo col-1 bgSecondaryColor">⠀</div>Com Aporte
                                     </div>
-                                    <div class="col-3 row" style="justify-content:center; align-items: center;">
+
+                                    <div class="row col-6 " style="display: flex; justify-content:center; align-items: center;">
                                         <div class="graphFooterInfo col-1 bgPrimaryColor">⠀</div>Sem Aporte
                                     </div>
                                     
@@ -260,6 +263,5 @@
     </div>
     <script src="./script/valuesApi.js"></script>
     <script src="./script/script.js"></script>
-    <!-- <script src="./script/cardsValue.js"></script> -->
 </body>
 </html>
