@@ -1,14 +1,15 @@
 # Desafio Desenvolvedor Front-end | EQI Investimentos
+O projeto consiste na construção do front-end de um Simulador de Investimentos
 
 ## Desenvolvido por Brian Oliveira
 
-Ferramentas Utilizadas
+### Ferramentas Utilizadas:
 - HTML
 - CSS
 - Bootstrap
 - Javascript
 
-## Como executar
+### Como executar:
 - Faça um clone / download deste repositório
 - Abra a pasta do projeto utilizando o terminal
 - Acesse a pasta `api` e execute o comando `npx json-server db.json`
