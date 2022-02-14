@@ -19,6 +19,12 @@ const vti = document.getElementById('valTotInv');
 const gli = document.getElementById('ganLiqu');
 let cards = [vfb, air, vpi, vfl, vti, gli];
 
+const contribuitionBar = document.getElementById('blocksCont');
+const noContribuitionBar = document.getElementById('blocksNoCont');
+const numbersGraph = document.getElementById('numbersGraph');
+let count = 0;
+
+// Rend Buttons
 rendType = (type) => {
     let valBrut = false;
     let valLiqu = false;
@@ -60,6 +66,7 @@ rendType = (type) => {
     }
 }
 
+// Index Buttons
 indexType = (type) => {
     let valPre = false;
     let valPos = false
@@ -114,6 +121,7 @@ indexType = (type) => {
     }
 }
 
+// Verify all the input data and show or hide the results area
 verifyData = () => {
 
     let validField = 0;
@@ -148,22 +156,22 @@ verifyData = () => {
             validField++;
 
         }
-        if (validField === fields.length) {
-            document.getElementById('showResults').style.visibility = 'visible';
-        } else {
-            document.getElementById('showResults').style.visibility = 'hidden';
-        }
 
         //Verifica Buttons
         rendimento();
         indexacao();
+
+        // Verifica dados  /  Mostra Resultados
+        if (validField === fields.length && rendimento() !== undefined && indexacao() !== undefined) {
+            document.getElementById('showResults').style.visibility = 'visible';
+        } else {
+            document.getElementById('showResults').style.visibility = 'hidden';
+        }
         
         //Get values from API
         getApiRend(rendimento());
         getApiIndex(indexacao());
 
-
-        
     });
 
     getValuesApi(
@@ -174,12 +182,14 @@ verifyData = () => {
     graphBars();
 }
 
+// Gets the values of the cards from the api and shows then
 cardsValue = () => {
     for (let i = 0; i < cards.length; i++) {
         cards[i].innerText = getValuesApi(getApiRend(rendimento()), getApiIndex(indexacao()))[i+2];
     }
 }
 
+// Verify the rend Button
 rendimento = () => {
     let colorBrut = btnBrut.style.backgroundColor;
     let colorLiqu = btnLiqu.style.backgroundColor;
@@ -200,6 +210,7 @@ rendimento = () => {
     }
 }
 
+// Verify the index button
 indexacao = () => {
     let colorPre = btnPre.style.backgroundColor;
     let colorPos = btnPos.style.backgroundColor;
@@ -227,35 +238,53 @@ indexacao = () => {
 
 clearData = () => {
     document.getElementById("form1").reset();
-    document.getElementById('showResults').style.visibility = 'hidden';
     fixValues();
 }
 
-graphBars = () => {
-    const contribuitionBar = document.getElementById('blocksCont')
-    const noContribuitionBar = document.getElementById('blocksNoCont')
-    const numbersGraph = document.getElementById('numbersGraph')
-    let heightBar = 9;
-    let number = 0
-
-    let barsCont = document.createElement('div');
-    barsCont.setAttribute('class', 'col-1 graphBlocks bgSecondaryColor');
-    barsCont.setAttribute('height', `${heightBar}%`);
-
-    let barsNoCont = document.createElement('div');
-    barsNoCont.setAttribute('class', 'col-1 graphBlocks bgPrimaryColor');
-    barsNoCont.setAttribute('height', `${heightBar}%`);
-
-    let numGraph = document.createElement('div');
-    numGraph.setAttribute('class', 'col-1 graphNumbers');
-    numGraph.innerText = `${number}`;
+// Create the graph bars
+graphBars = () => { 
+    let valuesGraphCont = getValuesApi(getApiRend(rendimento()), getApiIndex(indexacao()))[8].comAporte;
+    let valuesGraphNoCont = getValuesApi(getApiRend(rendimento()), getApiIndex(indexacao()))[8].semAporte;
     
-    console.log(getValuesApi(getApiRend(rendimento()), getApiIndex(indexacao()))[8]);
+    Object.keys(valuesGraphCont).forEach(index => {
+        let heightBar;
+
+        // Calc for the height of with Contribuition
+        heightBar = 0;
+        heightBar = (valuesGraphCont[index] - 1000) / 10;
+        heightBar = Math.round(heightBar);
+
+        let barsCont = document.createElement('div');
+        barsCont.setAttribute('class', 'col-1 graphBlocks bgSecondaryColor');
+        barsCont.setAttribute('style', `height: ${heightBar}%`);
+        contribuitionBar.appendChild(barsCont);
+
+        // Calc for the height of with no Contribuition
+        heightBar = 0;
+        heightBar = (valuesGraphNoCont[index] - 1000) / 10;
+        heightBar = Math.round(heightBar);
+
+        let barsNoCont = document.createElement('div');
+        barsNoCont.setAttribute('class', 'col-1 graphBlocks bgPrimaryColor');
+        barsNoCont.setAttribute('style', `height: ${heightBar}%`);
+        noContribuitionBar.appendChild(barsNoCont);
+
+        let numGraph = document.createElement('div');
+        numGraph.setAttribute('class', 'col-1 graphNumbers');
+        numGraph.innerText = `${index}`; 
+        numbersGraph.appendChild(numGraph);
         
-    contribuitionBar.appendChild(barsCont);
-    noContribuitionBar.appendChild(barsNoCont);
-    numbersGraph.appendChild(numGraph);
+        // Check if already exists and remove the graph
+        if (index > 10 || count !== 0) {
+            if (barsCont.closest('#blocksCont') || barsNoCont.closest('#blocksNoCont') || numGraph.closest('#numbersGraph')) {
+                contribuitionBar.removeChild(barsCont);
+                noContribuitionBar.removeChild(barsNoCont);
+                numbersGraph.removeChild(numGraph);
+            } 
+        }
+        
+    });  
+    
+    count++;
     
 }
-
-

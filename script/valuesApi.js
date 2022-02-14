@@ -27,7 +27,6 @@ fixValues = () => {
 }
 fixValues();
 
-
 getApiRend = (index) => {
     const bruto = "tipoRendimento=bruto";
     const liqui = "tipoRendimento=liquido";
