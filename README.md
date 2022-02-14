@@ -13,4 +13,4 @@ Ferramentas Utilizadas
 - Abra a pasta do projeto utilizando o terminal
 - Acesse a pasta `api` e execute o comando `npx json-server db.json`
 - Volte à pasta principal do projeto
-- Abra o arquivo `index.html`
+- Abra o arquivo `index.html` para executar o projeto
