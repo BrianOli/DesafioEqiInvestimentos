@@ -12,4 +12,5 @@ Ferramentas Utilizadas
 - Faça um clone / download deste repositório
 - Abra a pasta do projeto utilizando o terminal
 - Acesse a pasta `api` e execute o comando `npx json-server db.json`
-- Execute o projeto normalmente 
+- Volte à pasta principal do projeto
+- Abra o arquivo `index.html`
