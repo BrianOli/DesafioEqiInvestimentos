@@ -6,11 +6,15 @@ fixValues = () => {
     let indexIpca = Object.values(JSON.parse(methodGet(`${linkApiInd}${ipca}`))[0]);
     let ipcaId = document.getElementById('ipcaYear')
     let valueIpca = String(indexIpca[1]);
-            
+    
+    let ipcaError = document.getElementById('spanIpca');
+    let cdiError = document.getElementById('spanCdi')
+
     ipcaId.value = valueIpca;
     ipcaId.addEventListener('change', (event) => {
         ipcaId.value = valueIpca;
-        alert('This value cannot be changed');
+        ipcaError.innerText = `IPCA não pode ser modificado.`;
+        setTimeout(() => { ipcaError.innerText = `` }, 2500);
     });
     
     const cdi = "?nome=cdi";
@@ -22,7 +26,8 @@ fixValues = () => {
     
     cdiId.addEventListener('change', (event) => {
         cdiId.value = valueCdi;
-        alert('This value cannot be changed');
+        cdiError.innerText = `CDI não pode ser modificado.`;
+        setTimeout(() => {cdiError.innerText = ``}, 2500)
     });    
 }
 fixValues();

@@ -126,7 +126,7 @@ verifyData = () => {
 
     let validField = 0;
     fields.forEach(index => {
-        
+
         //Verifica Campos Input
         let errorId = index.id.replace('field', 'span');
         let error = document.getElementById(errorId);
